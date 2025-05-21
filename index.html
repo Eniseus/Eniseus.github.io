@@ -437,15 +437,37 @@
             
             // Generate skills
             const skillsContainer = document.getElementById('skills-container');
+            const categories = {
+              "Programming": [],
+                "Libraries & Tools": [],
+                "Other": []
+            };
+
             config.skills.forEach(skill => {
-                const skillElement = document.createElement('div');
-                skillElement.className = 'flex flex-col items-center p-4 bg-white dark:bg-gray-700 rounded-lg shadow-sm';
-                skillElement.innerHTML = `
+                if (["HTML", "CSS", "JavaScript", "Python"].includes(skill.name)) {
+                 categories.Programming.push(skill);
+                  } else if (["React", "Node.js", "Docker", "AWS", "Git"].includes(skill.name)) {
+                 categories["Libraries & Tools"].push(skill);
+                  } else {
+                  categories.Other.push(skill);
+                }
+            });
+
+            for (const [category, skills] of Object.entries(categories)) {
+                const group = document.createElement('div');
+                group.innerHTML = `<h3 class="col-span-full text-xl font-semibold mb-4 mt-8">${category}</h3>`;
+                skillsContainer.appendChild(group);
+
+                skills.forEach(skill => {
+                    const skillElement = document.createElement('div');
+                    skillElement.className = 'flex flex-col items-center p-4 bg-white dark:bg-gray-700 rounded-lg shadow-sm';
+                    skillElement.innerHTML = `
                     <i class="${skill.icon} ${skill.color} text-4xl mb-3"></i>
                     <span class="font-medium">${skill.name}</span>
                 `;
-                skillsContainer.appendChild(skillElement);
-            });
+                    skillsContainer.appendChild(skillElement);
+                });
+            }
             
             // Generate social links
             const socialContainer = document.getElementById('social-links');
