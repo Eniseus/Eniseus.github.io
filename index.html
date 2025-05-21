@@ -105,7 +105,10 @@
                     <a href="#projects" class="nav-link px-1 text-sm font-medium">Projects</a>
                     <a href="#skills" class="nav-link px-1 text-sm font-medium">Skills</a>
                     <a href="#contact" class="nav-link px-1 text-sm font-medium">Contact</a>
-                    
+                    <label class="dark-toggle">
+                        <input type="checkbox" id="darkModeToggle">
+                        <span class="dark-slider"></span>
+                    </label>
                 </div>
                 <div class="md:hidden flex items-center">
                     <button id="mobile-menu-button" class="text-gray-500 hover:text-gray-900 dark:hover:text-white">
@@ -123,6 +126,13 @@
                 <a href="#projects" class="block px-3 py-2 rounded-md text-base font-medium hover:bg-gray-100 dark:hover:bg-gray-700">Projects</a>
                 <a href="#skills" class="block px-3 py-2 rounded-md text-base font-medium hover:bg-gray-100 dark:hover:bg-gray-700">Skills</a>
                 <a href="#contact" class="block px-3 py-2 rounded-md text-base font-medium hover:bg-gray-100 dark:hover:bg-gray-700">Contact</a>
+                <div class="flex items-center px-3 py-2">
+                    <span class="mr-2">Dark Mode</span>
+                    <label class="dark-toggle">
+                        <input type="checkbox" id="mobileDarkModeToggle">
+                        <span class="dark-slider"></span>
+                    </label>
+                </div>
             </div>
         </div>
     </nav>
@@ -155,6 +165,9 @@
         </div>
         <div class="flex flex-col md:flex-row items-center">
             <div class="md:w-1/3 mb-8 md:mb-0 flex justify-center">
+                <div class="w-64 h-64 rounded-lg overflow-hidden shadow-lg">
+                    <img src="https://via.placeholder.com/300x400" alt="About" class="w-full h-full object-cover" id="about-image">
+                </div>
             </div>
             <div class="md:w-2/3 md:pl-12">
                 <h3 class="text-2xl font-semibold mb-4" id="about-title">Who I Am</h3>
@@ -177,36 +190,14 @@
                         <p class="text-gray-600 dark:text-gray-300" id="about-experience">X+ Years</p>
                     </div>
                 </div>
+                <div class="mt-8">
+                    <a href="#" class="inline-flex items-center text-blue-600 dark:text-blue-400 font-medium">
+                        Download CV
+                        <i class="fas fa-download ml-2"></i>
+                    </a>
+                </div>
             </div>
         </div>
-    </section>
-
-    <!-- Timeline Section -->
-    <section id="timeline" class="py-20 px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto">
-      <div class="text-center mb-12">
-        <h2 class="text-3xl font-bold mb-4">Experience Timeline</h2>
-        <div class="w-20 h-1 bg-blue-600 dark:bg-blue-400 mx-auto"></div>
-      </div>
-      <div class="relative border-l-2 border-blue-500 dark:border-blue-400 pl-6">
-        <div class="mb-10">
-          <div class="absolute w-4 h-4 bg-blue-600 dark:bg-blue-400 rounded-full -left-2 top-1.5"></div>
-          <h3 class="text-xl font-semibold">Stadt-Sparkasse Solingen – IT Management</h3>
-          <span class="text-sm text-gray-500 dark:text-gray-400">2024 - Present</span>
-          <p class="text-gray-700 dark:text-gray-300 mt-2">Working student in IT Management, supporting data-driven projects.</p>
-        </div>
-        <div class="mb-10">
-          <div class="absolute w-4 h-4 bg-blue-600 dark:bg-blue-400 rounded-full -left-2 top-1.5"></div>
-          <h3 class="text-xl font-semibold">University of Wuppertal – Research Assistant</h3>
-          <span class="text-sm text-gray-500 dark:text-gray-400">2023 - Present</span>
-          <p class="text-gray-700 dark:text-gray-300 mt-2">Research assistant in Analysis. Helping students solve the weekly sheets.</p>
-        </div>
-        <div>
-          <div class="absolute w-4 h-4 bg-blue-600 dark:bg-blue-400 rounded-full -left-2 top-1.5"></div>
-          <h3 class="text-xl font-semibold">University of Wuppertal – B.Sc. Computer Science</h3>
-          <span class="text-sm text-gray-500 dark:text-gray-400">2022 - Present</span>
-          <p class="text-gray-700 dark:text-gray-300 mt-2">Studying core areas including data structures, algorithms, machine learning and data engineering.</p>
-        </div>
-      </div>
     </section>
 
     <!-- Projects Section -->
@@ -231,19 +222,80 @@
         </div>
     </section>
 
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto">
+        <div class="text-center mb-12">
+            <h2 class="text-3xl font-bold mb-4">Get In Touch</h2>
+            <div class="w-20 h-1 bg-blue-600 dark:bg-blue-400 mx-auto"></div>
+        </div>
+        <div class="flex flex-col md:flex-row">
+            <div class="md:w-1/2 mb-10 md:mb-0 md:pr-8">
+                <h3 class="text-2xl font-semibold mb-6">Contact Information</h3>
+                <div class="space-y-6">
+                    <div class="flex items-start">
+                        <div class="bg-blue-100 dark:bg-blue-900/50 p-3 rounded-full mr-4">
+                            <i class="fas fa-envelope text-blue-600 dark:text-blue-400"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold">Email</h4>
+                            <p class="text-gray-600 dark:text-gray-300" id="contact-email">your.email@example.com</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start">
+                        <div class="bg-blue-100 dark:bg-blue-900/50 p-3 rounded-full mr-4">
+                            <i class="fas fa-phone-alt text-blue-600 dark:text-blue-400"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold">Phone</h4>
+                            <p class="text-gray-600 dark:text-gray-300" id="contact-phone">+1 (123) 456-7890</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start">
+                        <div class="bg-blue-100 dark:bg-blue-900/50 p-3 rounded-full mr-4">
+                            <i class="fas fa-map-marker-alt text-blue-600 dark:text-blue-400"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold">Location</h4>
+                            <p class="text-gray-600 dark:text-gray-300" id="contact-location">Your City, Country</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="mt-10">
+                    <h4 class="font-semibold mb-4">Follow Me</h4>
+                    <div class="flex space-x-4" id="social-links">
+                        <!-- Social links will be dynamically inserted here -->
+                    </div>
+                </div>
+            </div>
+            <div class="md:w-1/2">
+                <form class="space-y-6">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div>
+                            <label for="name" class="block mb-2 font-medium">Your Name</label>
+                            <input type="text" id="name" class="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                        </div>
+                        <div>
+                            <label for="email" class="block mb-2 font-medium">Your Email</label>
+                            <input type="email" id="email" class="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                        </div>
+                    </div>
+                    <div>
+                        <label for="subject" class="block mb-2 font-medium">Subject</label>
+                        <input type="text" id="subject" class="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                    </div>
+                    <div>
+                        <label for="message" class="block mb-2 font-medium">Message</label>
+                        <textarea id="message" rows="5" class="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-blue-500"></textarea>
+                    </div>
+                    <button type="submit" class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg font-medium transition w-full">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
     <!-- Footer -->
     <footer class="bg-gray-800 text-white py-12">
         <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            </div>
-</section>
-
-<!-- Projects Section -->
-<section id="projects" class="py-20 px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto">
-<div class="text-center mb-12">
-@@ -296,28 +324,8 @@
-<!-- Footer -->
-<footer class="bg-gray-800 text-white py-12">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex flex-col md:flex-row justify-between items-center">
                 <div class="mb-6 md:mb-0">
                     <a href="#" class="text-xl font-bold text-blue-400">YourName</a>
@@ -264,23 +316,8 @@
                     </a>
                 </div>
             </div>
-<div class="mt-8 pt-8 border-t border-gray-700 text-center text-gray-400">
-                <p id="copyright">© 2023 Your Name. All rights reserved.</p>
-</div>
-</div>
-</footer>
-@@ -383,28 +391,27 @@
-],
-
-// Footer
-            footerText: "Building digital solutions that make a difference. Let's create something amazing together.",
-copyright: `© ${new Date().getFullYear()} Enise Usta. All rights reserved.`,
-
-// Images
-profileImage: "https://via.placeholder.com/400x400"
-};
             <div class="mt-8 pt-8 border-t border-gray-700 text-center text-gray-400">
-                <p id="copyright">© 2025 Your Name. All rights reserved.</p>
+                <p id="copyright">© 2023 Your Name. All rights reserved.</p>
             </div>
         </div>
     </footer>
@@ -295,7 +332,7 @@ profileImage: "https://via.placeholder.com/400x400"
             // Personal Information
             name: "Enise Usta",
             title: "Aspiring Data Engineer",
-            intro: "I build some small sized pipelines and write scripts, experiment with large masses of data.",
+            intro: "I build some small sized pipelines and write scripts, I love working with large masses of data.",
             
             // About Section
             about: {
@@ -346,10 +383,11 @@ profileImage: "https://via.placeholder.com/400x400"
             ],
             
             // Footer
+            footerText: "Building digital solutions that make a difference. Let's create something amazing together.",
             copyright: `© ${new Date().getFullYear()} Enise Usta. All rights reserved.`,
             
             // Images
-            profileImage: "/pp.png"
+            profileImage: "https://via.placeholder.com/400x400"
         };
 
         // Initialize the page with config data
@@ -402,37 +440,15 @@ profileImage: "https://via.placeholder.com/400x400"
             
             // Generate skills
             const skillsContainer = document.getElementById('skills-container');
-            const categories = {
-              "Programming": [],
-                "Libraries & Tools": [],
-                "Other": []
-            };
-
             config.skills.forEach(skill => {
-                if (["HTML", "CSS", "JavaScript", "Python"].includes(skill.name)) {
-                 categories.Programming.push(skill);
-                  } else if (["React", "Node.js", "Docker", "AWS", "Git"].includes(skill.name)) {
-                 categories["Libraries & Tools"].push(skill);
-                  } else {
-                  categories.Other.push(skill);
-                }
-            });
-
-            for (const [category, skills] of Object.entries(categories)) {
-                const group = document.createElement('div');
-                group.innerHTML = `<h3 class="col-span-full text-xl font-semibold mb-4 mt-8">${category}</h3>`;
-                skillsContainer.appendChild(group);
-
-                skills.forEach(skill => {
-                    const skillElement = document.createElement('div');
-                    skillElement.className = 'flex flex-col items-center p-4 bg-white dark:bg-gray-700 rounded-lg shadow-sm';
-                    skillElement.innerHTML = `
+                const skillElement = document.createElement('div');
+                skillElement.className = 'flex flex-col items-center p-4 bg-white dark:bg-gray-700 rounded-lg shadow-sm';
+                skillElement.innerHTML = `
                     <i class="${skill.icon} ${skill.color} text-4xl mb-3"></i>
                     <span class="font-medium">${skill.name}</span>
                 `;
-                    skillsContainer.appendChild(skillElement);
-                });
-            }
+                skillsContainer.appendChild(skillElement);
+            });
             
             // Generate social links
             const socialContainer = document.getElementById('social-links');
@@ -446,6 +462,10 @@ profileImage: "https://via.placeholder.com/400x400"
                 socialContainer.appendChild(socialElement);
             });
             
+            // Dark mode toggle
+            const darkModeToggle = document.getElementById('darkModeToggle');
+            const mobileDarkModeToggle = document.getElementById('mobileDarkModeToggle');
+            
             // Check for saved user preference or use system preference
             if (localStorage.getItem('darkMode') === 'true' || 
                 (!localStorage.getItem('darkMode') && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
@@ -453,6 +473,15 @@ profileImage: "https://via.placeholder.com/400x400"
                 darkModeToggle.checked = true;
                 mobileDarkModeToggle.checked = true;
             }
+            
+            // Toggle dark mode
+            function toggleDarkMode() {
+                document.documentElement.classList.toggle('dark');
+                localStorage.setItem('darkMode', document.documentElement.classList.contains('dark'));
+            }
+            
+            darkModeToggle.addEventListener('change', toggleDarkMode);
+            mobileDarkModeToggle.addEventListener('change', toggleDarkMode);
             
             // Mobile menu toggle
             const mobileMenuButton = document.getElementById('mobile-menu-button');
@@ -504,4 +533,4 @@ profileImage: "https://via.placeholder.com/400x400"
         });
     </script>
 </body>
-</html>
+</html> i want to add a timeline to show my education and work experience, and also kick out the switch button, categorize my skills as programming and libraries and other
