@@ -97,7 +97,7 @@
         <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between h-16">
                 <div class="flex items-center">
-                    <a href="#" class="text-xl font-bold text-blue-600 dark:text-blue-400">YourName</a>
+                    <a href="#" class="text-xl font-bold text-blue-600 dark:text-blue-400"></a>
                 </div>
                 <div class="hidden md:flex items-center space-x-8">
                     <a href="#home" class="nav-link px-1 text-sm font-medium">Home</a>
@@ -200,6 +200,34 @@
         </div>
     </section>
 
+    <!-- Timeline Section -->
+    <section id="timeline" class="py-20 px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl font-bold mb-4">Experience Timeline</h2>
+        <div class="w-20 h-1 bg-blue-600 dark:bg-blue-400 mx-auto"></div>
+      </div>
+      <div class="relative border-l-2 border-blue-500 dark:border-blue-400 pl-6">
+        <div class="mb-10">
+          <div class="absolute w-4 h-4 bg-blue-600 dark:bg-blue-400 rounded-full -left-2 top-1.5"></div>
+          <h3 class="text-xl font-semibold">Stadt-Sparkasse Solingen – IT Management</h3>
+          <span class="text-sm text-gray-500 dark:text-gray-400">2024 - Present</span>
+          <p class="text-gray-700 dark:text-gray-300 mt-2">Working student in IT Management, supporting data-driven projects.</p>
+        </div>
+        <div class="mb-10">
+          <div class="absolute w-4 h-4 bg-blue-600 dark:bg-blue-400 rounded-full -left-2 top-1.5"></div>
+          <h3 class="text-xl font-semibold">University of Wuppertal – Research Assistant</h3>
+          <span class="text-sm text-gray-500 dark:text-gray-400">2023 - Present</span>
+          <p class="text-gray-700 dark:text-gray-300 mt-2">Research assistant in Analysis. Helping students solve the weekly sheets.</p>
+        </div>
+        <div>
+          <div class="absolute w-4 h-4 bg-blue-600 dark:bg-blue-400 rounded-full -left-2 top-1.5"></div>
+          <h3 class="text-xl font-semibold">University of Wuppertal – B.Sc. Computer Science</h3>
+          <span class="text-sm text-gray-500 dark:text-gray-400">2022 - Present</span>
+          <p class="text-gray-700 dark:text-gray-300 mt-2">Studying core areas including data structures, algorithms, machine learning and data engineering.</p>
+        </div>
+      </div>
+    </section>
+
     <!-- Projects Section -->
     <section id="projects" class="py-20 px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto">
         <div class="text-center mb-12">
@@ -296,28 +324,8 @@
     <!-- Footer -->
     <footer class="bg-gray-800 text-white py-12">
         <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex flex-col md:flex-row justify-between items-center">
-                <div class="mb-6 md:mb-0">
-                    <a href="#" class="text-xl font-bold text-blue-400">YourName</a>
-                    <p class="mt-2 text-gray-400" id="footer-text">A brief footer message about you or your work.</p>
-                </div>
-                <div class="flex space-x-6">
-                    <a href="#" class="text-gray-400 hover:text-white transition">
-                        <i class="fab fa-github text-xl"></i>
-                    </a>
-                    <a href="#" class="text-gray-400 hover:text-white transition">
-                        <i class="fab fa-linkedin text-xl"></i>
-                    </a>
-                    <a href="#" class="text-gray-400 hover:text-white transition">
-                        <i class="fab fa-twitter text-xl"></i>
-                    </a>
-                    <a href="#" class="text-gray-400 hover:text-white transition">
-                        <i class="fab fa-instagram text-xl"></i>
-                    </a>
-                </div>
-            </div>
             <div class="mt-8 pt-8 border-t border-gray-700 text-center text-gray-400">
-                <p id="copyright">© 2023 Your Name. All rights reserved.</p>
+                <p id="copyright">© 2025 Your Name. All rights reserved.</p>
             </div>
         </div>
     </footer>
@@ -383,7 +391,6 @@
             ],
             
             // Footer
-            footerText: "Building digital solutions that make a difference. Let's create something amazing together.",
             copyright: `© ${new Date().getFullYear()} Enise Usta. All rights reserved.`,
             
             // Images
@@ -473,15 +480,6 @@
                 darkModeToggle.checked = true;
                 mobileDarkModeToggle.checked = true;
             }
-            
-            // Toggle dark mode
-            function toggleDarkMode() {
-                document.documentElement.classList.toggle('dark');
-                localStorage.setItem('darkMode', document.documentElement.classList.contains('dark'));
-            }
-            
-            darkModeToggle.addEventListener('change', toggleDarkMode);
-            mobileDarkModeToggle.addEventListener('change', toggleDarkMode);
             
             // Mobile menu toggle
             const mobileMenuButton = document.getElementById('mobile-menu-button');
