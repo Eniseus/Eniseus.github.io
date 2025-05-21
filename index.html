@@ -358,13 +358,7 @@
             document.getElementById('about-experience').textContent = config.about.experience;
             document.getElementById('about-image').src = config.about.image;
             
-            // Set contact information
-            document.getElementById('contact-email').textContent = config.contact.email;
-            document.getElementById('contact-phone').textContent = config.contact.phone;
-            document.getElementById('contact-location').textContent = config.contact.location;
-            
-            // Set footer
-            document.getElementById('footer-text').textContent = config.footerText;
+            // Set copyright text
             document.getElementById('copyright').textContent = config.copyright;
             
             // Generate projects
@@ -400,7 +394,7 @@
                 `;
                 skillsContainer.appendChild(skillElement);
             });
-            
+            /*
             // Generate social links
             const socialContainer = document.getElementById('social-links');
             config.social.forEach(social => {
@@ -412,6 +406,7 @@
                 socialElement.title = social.name;
                 socialContainer.appendChild(socialElement);
             });
+            */
             
             // Dark mode toggle
             const darkModeToggle = document.getElementById('darkModeToggle');
