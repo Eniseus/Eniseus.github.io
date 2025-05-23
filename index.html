@@ -44,8 +44,7 @@
         .nav-link:hover::after {
             width: 100%;
         }
-        
-        /* Dark mode toggle styles */
+        /*
         .dark-toggle {
             position: relative;
             width: 50px;
@@ -88,7 +87,7 @@
         
         input:checked + .dark-slider:before {
             transform: translateX(24px);
-        }
+        } */
     </style>
 </head>
 <body class="bg-gray-50 text-gray-800 dark:bg-gray-900 dark:text-gray-100 transition-colors duration-300">
@@ -156,25 +155,6 @@
             <div class="md:w-2/3 md:pl-12">
                 <h3 class="text-2xl font-semibold mb-4" id="about-title">Who I Am</h3>
                 <p class="text-gray-600 dark:text-gray-300 mb-6" id="about-text">Detailed info.</p>
-                <!--
-                <div class="grid grid-cols-2 gap-4">
-                    <div>
-                        <h4 class="font-semibold mb-2">Name:</h4>
-                        <p class="text-gray-600 dark:text-gray-300" id="about-name">Your Name</p>
-                    </div>
-                    <div>
-                        <h4 class="font-semibold mb-2">Email:</h4>
-                        <p class="text-gray-600 dark:text-gray-300" id="about-email">your.email@example.com</p>
-                    </div>
-                    <div>
-                        <h4 class="font-semibold mb-2">From:</h4>
-                        <p class="text-gray-600 dark:text-gray-300" id="about-location">Your City, Country</p>
-                    </div>
-                    <div>
-                        <h4 class="font-semibold mb-2">Experience:</h4>
-                        <p class="text-gray-600 dark:text-gray-300" id="about-experience">X+ Years</p>
-                    </div>
-                    -->
                 </div>
             </div>
         </div>
@@ -275,10 +255,6 @@
             about: {
                 title: "Who I Am",
                 text: "Hi there! I am Enise Usta, computer science student and  research assistant in Analysis in the University of Wuppertal, currently working at Stadt-Sparkasse Solingen in the IT Management. Other than exploring new tools you can catch me in my mini home gym or reading a book.",
-                /*
-                name: "Enise Usta",
-                email: "eniseusta1@gmail.com",
-                experience: "1+ Year",*/
             },
             
             // Projects
@@ -331,12 +307,6 @@
             // Set about section
             document.getElementById('about-title').textContent = config.about.title;
             document.getElementById('about-text').textContent = config.about.text;
-            /*
-            document.getElementById('about-name').textContent = config.about.name;
-            document.getElementById('about-email').textContent = config.about.email;
-            document.getElementById('about-location').textContent = config.about.location;
-            document.getElementById('about-experience').textContent = config.about.experience;
-            document.getElementById('about-image').src = config.about.image; */
             
             // Set copyright text
             document.getElementById('copyright').textContent = config.copyright;
@@ -396,7 +366,6 @@
                             top: targetElement.offsetTop - 80,
                             behavior: 'smooth'
                         });
-                        
                         // Close mobile menu if open
                         mobileMenu.classList.add('hidden');
                     }
